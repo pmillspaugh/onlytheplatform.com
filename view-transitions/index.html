@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Tags that must be included directly in each HTML page -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/_styles/reset.css" />
+    <link rel="stylesheet" href="/_styles/globals.css" />
+    <link rel="icon" href="/_assets/favicon.ico" />
+    <script src="/_scripts/meta.js"></script>
+    <script type="module" src="/_components/index.js"></script>
+    <script src="/index.js" defer></script>
+
+    <!-- Tags specific to this page -->
+    <title>View Transitions | Only The Platform</title>
+  </head>
+
+  <body>
+    <only-header></only-header>
+    <main>
+      <h1>View Transitions</h1>
+      <p>
+        For a Multi-Page Application (MPA) like this website, adding View
+        Transitions is
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API/Using#basic_mpa_view_transition"
+          >ridiculously easy</a
+        >.
+      </p>
+      <p>It's one CSS declaration:</p>
+      <pre><code>@view-transition {
+  navigation: auto;
+}</code></pre>
+      <p>
+        The default animation is a cross-fade, but you can customize that with
+        View Transition pseudo-elements.
+      </p>
+      <h2>JS frameworks</h2>
+      <p>
+        For Single-Page Apps (SPAs), it's a bit
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API/Using#controlling_view_transitions_with_javascript"
+          >more involved</a
+        >.
+      </p>
+      <p>
+        I think
+        <a href="https://docs.astro.build/en/guides/view-transitions/">Astro</a>
+        was the first major framework to add support. It looks like
+        <a
+          href="https://remix.run/docs/en/main/components/nav-link#viewtransition"
+          >Remix</a
+        >
+        and
+        <a href="https://svelte.dev/docs/kit/$app-navigation#onNavigate"
+          >SvelteKit</a
+        >
+        also have official support, and there's a popular
+        <a href="https://github.com/shuding/next-view-transitions"
+          >next-view-transitions</a
+        >
+        library for Next.js.
+      </p>
+    </main>
+    <only-footer></only-footer>
+  </body>
+</html>

@@ -29,8 +29,6 @@ class Header extends HTMLElement {
       </header>
 
       <style>
-        @import "/_styles/reset.css";
-        @import "/_styles/globals.css";
         @import "/_components/header/header.css";
       </style>
     `;

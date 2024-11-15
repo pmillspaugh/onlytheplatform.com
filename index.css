@@ -1,0 +1,35 @@
+li {
+  a {
+    display: block;
+    margin-inline: -16px;
+    padding-inline: 16px;
+    padding-block: 8px;
+    background: var(--color-accent-lighter);
+    border-bottom: 1px dashed var(--color-accent-light);
+
+    &:hover {
+      background: var(--color-accent-light);
+    }
+  }
+
+  &:first-child > a {
+    border-top: 1px dashed var(--color-accent-light);
+  }
+}
+
+:root[data-theme="dark"] {
+  li {
+    a {
+      background: var(--color-accent-darker);
+      border-bottom: 1px dashed var(--color-accent-dark);
+
+      &:hover {
+        background: var(--color-accent-dark);
+      }
+    }
+
+    &:first-child > a {
+      border-top: 1px dashed var(--color-accent-dark);
+    }
+  }
+}

@@ -2,6 +2,7 @@ footer {
   position: relative;
   padding-block: 24px;
   margin-inline: auto;
+  text-align: center;
 
   /* Dashed top border */
   &::before {

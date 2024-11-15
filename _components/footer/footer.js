@@ -13,8 +13,6 @@ class Footer extends HTMLElement {
       </footer>
 
       <style>
-        @import "/_styles/reset.css";
-        @import "/_styles/globals.css";
         @import "/_components/footer/footer.css";
       </style>
     `;

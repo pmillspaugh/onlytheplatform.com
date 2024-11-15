@@ -1,3 +1,7 @@
+@view-transition {
+  navigation: auto;
+}
+
 :root {
   /* VARIABLES */
   --color-foreground: #212121;
@@ -11,6 +15,8 @@
 
   --font-light: 200;
   --font-bold: 700;
+
+  --max-width: 640px;
 
   /* DEFAULTS */
   color: var(--color-foreground);
@@ -50,11 +56,17 @@
 body {
   display: grid;
   grid-template-rows: auto 1fr auto;
-  max-width: 640px;
+  max-width: var(--max-width);
   margin-inline: auto;
   padding-inline: 16px;
   border-left: 1px dashed var(--color-accent-light);
   border-right: 1px dashed var(--color-accent-light);
+
+  header,
+  main,
+  footer {
+    max-width: calc(var(--max-width) - 34px);
+  }
 }
 
 :root[data-theme="dark"] {
@@ -64,12 +76,30 @@ body {
   }
 }
 
+@media (max-width: 640px) {
+  body {
+    border-left: none;
+    border-right: none;
+  }
+}
+
 /* a */
 
 a {
   color: inherit;
   text-underline-offset: 2px;
   text-decoration-color: var(--color-accent);
+
+  &:hover {
+    color: var(--color-accent-dark);
+    text-decoration: none;
+  }
+}
+
+:root[data-theme="dark"] {
+  a:hover {
+    color: var(--color-accent-light);
+  }
 }
 
 /* button */
@@ -84,6 +114,7 @@ button {
 
   span[data-shortcut] {
     padding: 1px 2px;
+    color: var(--color-accent-dark);
     background: var(--color-accent-light);
   }
 
@@ -97,11 +128,35 @@ button {
     background: var(--color-accent-darker);
 
     span[data-shortcut] {
+      color: var(--color-accent-light);
       background: var(--color-accent-dark);
     }
 
     &:hover {
       background: var(--color-accent-dark);
     }
+  }
+}
+
+/* pre */
+
+pre {
+  position: relative;
+  overflow-x: auto;
+  margin-inline: -16px;
+  padding: 16px;
+  color: var(--color-accent-dark);
+  background: var(--color-accent-lighter);
+  border-top: 1px dashed var(--color-accent-light);
+  border-bottom: 1px dashed var(--color-accent-light);
+  font-size: 1rem;
+}
+
+:root[data-theme="dark"] {
+  pre {
+    color: var(--color-accent-light);
+    background: var(--color-accent-darker);
+    border-top: 1px dashed var(--color-accent-dark);
+    border-bottom: 1px dashed var(--color-accent-dark);
   }
 }

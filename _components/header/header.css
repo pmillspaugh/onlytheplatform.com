@@ -35,6 +35,10 @@ label:has(input[type="color"]) {
   border: 1px solid var(--color-accent);
   background: var(--color-accent-lighter);
 
+  &:hover {
+    background: var(--color-accent-light);
+  }
+
   div {
     overflow: hidden;
 
@@ -83,6 +87,10 @@ label:has(input[type="color"]:focus-visible) {
   label:has(input[type="color"]) {
     border: 1px solid var(--color-accent);
     background: var(--color-accent-darker);
+
+    &:hover {
+      background: var(--color-accent-dark);
+    }
   }
 
   label:has(input[type="color"]:focus-visible) {

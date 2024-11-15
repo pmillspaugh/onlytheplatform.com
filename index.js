@@ -1,4 +1,20 @@
 /**
+ * SERVICE WORKER REGISTRATION
+ */
+
+// An activated service worker can't manage the page that registered it until the next time you navigate to that page by reloading the page or reopening the PWA.
+// Hence, register the service worker on the root `/` page so that it can proxy network requests after navigating to `./service-worker.js` (or any other page).
+
+registerServiceWorker();
+
+function registerServiceWorker() {
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/service-worker.js");
+    console.log("Service worker registered");
+  }
+}
+
+/**
  * THEMING
  */
 
