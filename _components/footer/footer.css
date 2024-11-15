@@ -1,0 +1,24 @@
+footer {
+  position: relative;
+  padding-block: 24px;
+  margin-inline: auto;
+
+  /* Dashed top border */
+  &::before {
+    border-top: 1px dashed var(--color-accent-light);
+    content: "";
+    position: absolute;
+    top: 0;
+    inset-inline: 50%;
+    width: 100vw;
+    margin-inline: -50vw;
+  }
+}
+
+/* DARK MODE */
+
+:root[data-theme="dark"] {
+  footer::before {
+    border-top: 1px dashed var(--color-accent-dark);
+  }
+}

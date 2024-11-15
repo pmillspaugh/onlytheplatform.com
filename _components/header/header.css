@@ -1,0 +1,91 @@
+header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding-block: 24px;
+
+  /* Dashed bottom border */
+  &::after {
+    border-bottom: 1px dashed var(--color-accent-light);
+    content: "";
+    position: absolute;
+    bottom: 0;
+    inset-inline: 50%;
+    width: 100vw;
+    margin-inline: -50vw;
+  }
+}
+
+a[href="/"] {
+  align-self: center;
+  margin-right: auto;
+  text-decoration: none;
+}
+
+button#toggle-light {
+  display: none;
+}
+
+label:has(input[type="color"]) {
+  width: 32px;
+  height: 32px;
+  padding: 4px;
+  display: flex;
+  border: 1px solid var(--color-accent);
+  background: var(--color-accent-lighter);
+
+  div {
+    overflow: hidden;
+
+    /* Visually hidden label */
+    span {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+    }
+
+    input[type="color"] {
+      width: 64px;
+      height: 64px;
+      padding: 0;
+      border: none;
+      background: transparent;
+      transform: translate(-16px, -16px);
+      cursor: pointer;
+    }
+  }
+}
+
+label:has(input[type="color"]:focus-visible) {
+  border: 2px solid var(--color-accent);
+}
+
+/* DARK MODE */
+
+:root[data-theme="dark"] {
+  header::after {
+    border-bottom: 1px dashed var(--color-accent-dark);
+  }
+
+  button#toggle-light {
+    display: block;
+  }
+
+  button#toggle-dark {
+    display: none;
+  }
+
+  label:has(input[type="color"]) {
+    border: 1px solid var(--color-accent);
+    background: var(--color-accent-darker);
+  }
+
+  label:has(input[type="color"]:focus-visible) {
+    border: 2px solid var(--color-accent);
+  }
+}

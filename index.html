@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Tags that must be included directly in each HTML page -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/_styles/globals.css" />
+    <link rel="stylesheet" href="/_styles/reset.css" />
+    <link rel="icon" href="/_assets/favicon.ico" />
+    <script src="/_scripts/meta.js"></script>
+    <script type="module" src="/_components/index.js"></script>
+    <script src="/index.js" defer></script>
+
+    <!-- Tags specific to this page -->
+    <title>Only the platform</title>
+  </head>
+
+  <body>
+    <only-header></only-header>
+    <main>
+      <h1>Only The Platform</h1>
+      <p>
+        This website is an exploration of neat features available on the modern
+        Web. It only uses what browsers ship out of the box.
+        <em>No dependencies—just vanilla HTML, CSS, and JavaScript.</em>
+      </p>
+      <ul>
+        <li><a href="/service-workers">Service Workers</a></li>
+        <li><a href="/indexed-db">IndexedDB</a></li>
+        <li><a href="/web-components">Web Components</a></li>
+        <li><a href="/view-transitions">View Transitions</a></li>
+        <li><a href="/local-storage">localStorage</a></li>
+      </ul>
+    </main>
+    <only-footer></only-footer>
+  </body>
+</html>

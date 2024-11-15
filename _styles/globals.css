@@ -1,0 +1,107 @@
+:root {
+  /* VARIABLES */
+  --color-foreground: #212121;
+  --color-accent: #1fad36; /* can be customized by user at runtime */
+  --color-accent-light: color-mix(in oklab, var(--color-accent), #fff 50%);
+  --color-accent-lighter: color-mix(in oklab, var(--color-accent), #fff 75%);
+  --color-accent-lightest: color-mix(in oklab, var(--color-accent), #fff 95%);
+  --color-accent-dark: color-mix(in oklab, var(--color-accent), #000 25%);
+  --color-accent-darker: color-mix(in oklab, var(--color-accent), #000 50%);
+  --color-accent-darkest: color-mix(in oklab, var(--color-accent), #000 75%);
+
+  --font-light: 200;
+  --font-bold: 700;
+
+  /* DEFAULTS */
+  color: var(--color-foreground);
+  background: var(--color-accent-lightest);
+  accent-color: var(--color-accent);
+
+  /* https://modernfontstacks.com */
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
+    "DejaVu Sans Mono", monospace;
+  font-weight: normal;
+
+  *::selection {
+    background: var(--color-accent-light);
+  }
+
+  *:focus-visible {
+    outline: none;
+    background: var(--color-accent-light);
+  }
+
+  &[data-theme="dark"] {
+    color-scheme: dark;
+    --color-foreground: #f1f1f1;
+    background: var(--color-accent-darkest);
+
+    *::selection {
+      background: var(--color-accent-dark);
+    }
+
+    *:focus-visible {
+      outline: none;
+      background: var(--color-accent-dark);
+    }
+  }
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  max-width: 640px;
+  margin-inline: auto;
+  padding-inline: 16px;
+  border-left: 1px dashed var(--color-accent-light);
+  border-right: 1px dashed var(--color-accent-light);
+}
+
+:root[data-theme="dark"] {
+  body {
+    border-left: 1px dashed var(--color-accent-dark);
+    border-right: 1px dashed var(--color-accent-dark);
+  }
+}
+
+/* a */
+
+a {
+  color: inherit;
+  text-underline-offset: 2px;
+  text-decoration-color: var(--color-accent);
+}
+
+/* button */
+
+button {
+  padding: 4px 6px;
+  color: inherit;
+  background: var(--color-accent-lighter);
+  border: 1px solid var(--color-accent);
+  font-size: 0.875rem;
+  cursor: pointer;
+
+  span[data-shortcut] {
+    padding: 1px 2px;
+    background: var(--color-accent-light);
+  }
+
+  &:hover {
+    background: var(--color-accent-light);
+  }
+}
+
+:root[data-theme="dark"] {
+  button {
+    background: var(--color-accent-darker);
+
+    span[data-shortcut] {
+      background: var(--color-accent-dark);
+    }
+
+    &:hover {
+      background: var(--color-accent-dark);
+    }
+  }
+}
