@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Tags that must be included directly in each HTML page -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/_styles/reset.css" />
+    <link rel="stylesheet" href="/_styles/globals.css" />
+    <link rel="icon" href="/_assets/favicon.ico" />
+    <script src="/_scripts/meta.js"></script>
+    <script type="module" src="/_components/index.js"></script>
+    <script src="/index.js" defer></script>
+
+    <!-- Tags specific to this page -->
+    <title>Service Workers | Only The Platform</title>
+  </head>
+
+  <body>
+    <only-header></only-header>
+    <main>
+      <only-menu></only-menu>
+
+      <h1>Service Workers</h1>
+      <p>
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API"
+          >Service Workers</a
+        >
+        are
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API"
+          >Web Workers</a
+        >
+        that can proxy network requests. I recommend web.dev's
+        <a href="https://web.dev/learn/pwa/service-workers">article</a>
+        for a not-too-short, not-too-long intro.
+      </p>
+      <h2>Save for offline</h2>
+      <p>
+        This website uses service workers to implement offline features. When
+        you click "Save for offline" or (press the S key) on this or any other
+        page, the response from the server will be stored using the
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Cache"
+          >Cache API</a
+        >.
+      </p>
+      <p>If you load the page offline, it should still be there!</p>
+      <p>
+        Each request on this site is intercepted by a service worker, using a
+        "network-first" strategy. If the resource is found on the server, it'll
+        send the latest. Otherwise, it'll look in the cache.
+      </p>
+      <p><em>More to come here...</em></p>
+
+      <!-- TODO: Allow selecting a caching strategy for demo -->
+      <!-- It'll require closing the tab, re-opening, and reloading -->
+      <!-- <label for="caching-strategy">Caching strategy:</label>
+      <select
+        name="caching-strategy"
+        id="caching-strategy"
+        onchange="updateCachingStrategy(event.target.value)"
+      >
+        <option value="network-first">network-first</option>
+        <option value="cache-first">cache-first</option>
+        <option value="network-only">network-only</option>
+        <option value="cache-only">cache-only</option>
+        <option value="stale-while-revalidate">stale-while-revalidate</option>
+      </select> -->
+
+      <!-- TODO: Show cached resources -->
+    </main>
+    <only-footer></only-footer>
+  </body>
+</html>

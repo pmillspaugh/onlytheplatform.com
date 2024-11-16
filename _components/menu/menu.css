@@ -1,0 +1,12 @@
+menu#controls {
+  padding-left: 0;
+  margin-bottom: 16px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}

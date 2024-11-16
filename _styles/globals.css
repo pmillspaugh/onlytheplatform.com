@@ -67,6 +67,11 @@ body {
   footer {
     max-width: calc(var(--max-width) - 34px);
   }
+
+  main {
+    position: relative;
+    padding-bottom: 64px;
+  }
 }
 
 :root[data-theme="dark"] {
